@@ -59,3 +59,16 @@ type MerchantMenuPriceRequest struct {
 	Price    float64 `json:"price" binding:"required,gt=0"`
 	Discount float64 `json:"discount"`
 }
+
+type MenusByMerchantResponse struct {
+	Merchant MerchantResponse     `json:"merchant"`
+	Menu     MenuMerchantResponse `json:"menu"`
+}
+
+type MenuMerchantResponse struct {
+	Categories []CategoryMenuResponse `json:"categories"`
+}
+type MenusByBranchResponse struct {
+	Branch    BranchResponse            `json:"branch"`
+	Merchants []MenusByMerchantResponse `json:"merchants"`
+}

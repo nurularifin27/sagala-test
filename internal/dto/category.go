@@ -34,8 +34,8 @@ func (cr *CategoryResponse) BuildCategoryResponse(category models.Category) *Cat
 }
 
 type CategoryMenuResponse struct {
-	ID        uint           `json:"id"`
-	Name      string         `json:"name"`
-	SortOrder int            `json:"sort_order"`
-	Menus     []MenuResponse `json:"menus"`
+	ID        uint                    `json:"id"`
+	Name      string                  `json:"name"`
+	SortOrder int                     `json:"sort_order"`
+	Items     []MenuWithPriceResponse `json:"items"`
 }
