@@ -1,0 +1,10 @@
+CREATE TABLE branches (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(50) NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    company_id INTEGER NOT NULL REFERENCES companies(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_branches_company_id ON branches (company_id);
